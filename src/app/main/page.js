@@ -73,7 +73,7 @@ export default function Main() {
         {/* <script src="https://cdn.tailwindcss.com"></script> */}
         {/* <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet"/> */}
       </head>
-      <body className="__variable_5cfdac __variable_9a8899 antialiased ">
+      <body className="__variable_188709 __variable_9a8899 antialiased">
     
 
         {/* Navigation bar */}
@@ -248,53 +248,53 @@ export default function Main() {
             <section id="projects" className="bg-[#3674B5] px-10 pb-10">
                 <h1 className="text-center text-3xl text-[#9EC6F3] font-semibold">Projects</h1>
                 <div className="flex items-center justify-center">
-                    <div class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 w-7xl mt-10 mb-10 justify-center ">
-                        <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800 justify-evenly" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
-                            <li class="me-2">
-                                <button id="tech-tab" data-tabs-target="#tech" type="button" role="tab" aria-controls="tech" aria-selected="true" class="inline-block p-4 text-blue-600 dark:bg-gray-800 dark:text-blue-500">Tech</button>
+                    <div className="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 w-7xl mt-10 mb-10 justify-center ">
+                        <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800 justify-evenly" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
+                            <li className="me-2">
+                                <button id="tech-tab" data-tabs-target="#tech" type="button" role="tab" aria-controls="tech" aria-selected="true" className="inline-block p-4 text-blue-600 dark:bg-gray-800 dark:text-blue-500">Tech</button>
                             </li>
-                            <li class="me-2">
-                                <button id="art-project-tab" data-tabs-target="#art-project" type="button" role="tab" aria-controls="art-project" aria-selected="false" class="inline-block p-4 hover:text-gray-600  dark:hover:text-gray-300">Art</button>
+                            <li className="me-2">
+                                <button id="art-project-tab" data-tabs-target="#art-project" type="button" role="tab" aria-controls="art-project" aria-selected="false" className="inline-block p-4 hover:text-gray-600  dark:hover:text-gray-300">Art</button>
                             </li>
-                            <li class="me-2">
-                                <button id="fnb-tab" data-tabs-target="#fnb" type="button" role="tab" aria-controls="fnb" aria-selected="false" class="inline-block p-4 hover:text-gray-600  dark:hover:text-gray-300">F&B</button>
+                            <li className="me-2">
+                                <button id="fnb-tab" data-tabs-target="#fnb" type="button" role="tab" aria-controls="fnb" aria-selected="false" className="inline-block p-4 hover:text-gray-600  dark:hover:text-gray-300">F&B</button>
                             </li>
                         </ul>
                         <div id="defaultTabContent">
-                            <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800 flex flex-row flex-wrap gap-5 max-sm:flex-col" id="tech" role="tabpanel" aria-labelledby="tech-tab">
-                                <a href="#" class="block max-w-sm p-3 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"><Image src="/EmotRec-Web.png" alt="project-tech" width={400} height={200} />
+                            <div className="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800 flex flex-row flex-wrap gap-5 max-sm:flex-col" id="tech" role="tabpanel" aria-labelledby="tech-tab">
+                                <a href="#" className="block max-w-sm p-3 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"><Image src="/EmotRec-Web.png" alt="project-tech" width={400} height={200} />
                                 <h3 className="font-semibold text-center mt-3">Emotion Recognition Web App</h3>
                                 </a>
 
-                                <a href="#" class="block max-w-sm p-3 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"><Image src="/EmotRec-Web.png" alt="project-tech" width={400} height={200} />
+                                <a href="#" className="block max-w-sm p-3 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"><Image src="/EmotRec-Web.png" alt="project-tech" width={400} height={200} />
                                 <h3 className="font-semibold text-center mt-3">Emotion Recognition Web App</h3>
                                 </a>
                             </div>
-                            <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800 flex flex-row flex-wrap gap-5 max-sm:flex-col" id="art-project" role="tabpanel" aria-labelledby="art-project-tab">
-                                <a href="#" class="block max-w-sm p-3 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"><Image src="/EmotRec-Web.png" alt="project-tech" width={400} height={200} />
+                            <div className="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800 flex flex-row flex-wrap gap-5 max-sm:flex-col" id="art-project" role="tabpanel" aria-labelledby="art-project-tab">
+                                <a href="#" className="block max-w-sm p-3 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"><Image src="/EmotRec-Web.png" alt="project-tech" width={400} height={200} />
                                 <h3 className="font-semibold text-center mt-3">Emotion Recognition Web App</h3>
                                 </a>
 
-                                <a href="#" class="block max-w-sm p-3 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"><Image src="/EmotRec-Web.png" alt="project-tech" width={400} height={200} />
+                                <a href="#" className="block max-w-sm p-3 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"><Image src="/EmotRec-Web.png" alt="project-tech" width={400} height={200} />
                                 <h3 className="font-semibold text-center mt-3">Emotion Recognition Web App</h3>
                                 </a>
                             </div>
-                            <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800  max-sm:flex-col" id="fnb" role="tabpanel" aria-labelledby="fnb-tab">
-                                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <div className="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800  max-sm:flex-col" id="fnb" role="tabpanel" aria-labelledby="fnb-tab">
+                                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                     <div>
-                                        <img class="h-auto max-w-full rounded-lg" src="images/Banoffee-Choco.jpg" alt="Dessert"/>
+                                        <img className="h-auto max-w-full rounded-lg" src="images/Banoffee-Choco.jpg" alt="Dessert"/>
                                         <h3 className="font-semibold text-center text-white mt-3">Dessert</h3>
                                     </div>
                                     <div>
-                                        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="Catering"/>
+                                        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="Catering"/>
                                         <h3 className="font-semibold text-center text-white mt-3">Catering</h3>
                                     </div>
                                     <div>
-                                        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="Appetizer"/>
+                                        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="Appetizer"/>
                                         <h3 className="font-semibold text-center text-white mt-3">Main Course</h3>
                                     </div>
                                     <div>
-                                        <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt=""/>
+                                        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt=""/>
                                     </div>
                                 </div>
 
@@ -332,17 +332,17 @@ export default function Main() {
                     <form className="md:min-w-sm">
                         <h3 className=" text-xl font-semibold">Message</h3>
                         <div className="mb-5">
-                            <label for="name" className="block mb-2 text-sm font-medium text-gray-900">Your name</label>
+                            <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900">Your name</label>
                             <input type="text" id="name" className="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Flowbite" required />
                         </div>
 
                         <div className="mb-5">
-                            <label for="email" className="block mb-2 text-sm font-medium text-gray-900">Your email</label>
+                            <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">Your email</label>
                             <input type="email" id="email" className="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="name@flowbite.com" required />
                         </div>
 
                         <div className="mb-5">
-                            <label for="message" className="block mb-2 text-sm font-medium text-gray-900">Your message</label>
+                            <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900">Your message</label>
                             <textarea id="message" rows="4" className="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Leave a comment..."></textarea>
                         </div>
                         <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-[#9EC6F3] font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-[#3674B5] dark:hover:bg-[#9EC6F3] hover:text-gray-700 dark:hover:text-gray-700">Send Message</button>
