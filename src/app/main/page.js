@@ -31,12 +31,10 @@ export function useIsVisible(ref) {
     return isIntersecting;
   }
 
-  function CurrentTimeDisplay() {
-
-    
-}
 
 export default function Main() {
+    
+
     for (let i = 0; i < 10; i++) {
         // console.log("Hello, world!");
 
@@ -131,7 +129,7 @@ export default function Main() {
                         <div className="flex flex-col  sm:justify-start sm:space-y-0 gap-3">
                             <span>Personal website is only for self-introduction as your POV? Click below for more professional!</span>
                             <div>
-                                <button type="button" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-[#9EC6F3] font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-[#3674B5] dark:hover:bg-[#9EC6F3] hover:text-[#3674B5] dark:hover:text-[#3674B5]"><a href="CV ATS - Valentio Stanley Gunadi.pdf" download>Curriculum Vitae </a></button>
+                                <button type="button" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-[#9EC6F3] font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-[#3674B5] dark:hover:bg-[#9EC6F3] hover:text-[#3674B5] dark:hover:text-[#3674B5]"><a href="/documents/New CV ATS - Valentio Stanley Gunadi.pdf" download="New CV ATS - Valentio Stanley Gunadi.pdf">Curriculum Vitae </a></button>
                                 <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-[#9EC6F3] font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-[#3674B5] dark:hover:bg-[#9EC6F3] hover:text-[#3674B5] dark:hover:text-[#3674B5] focus:outline-none">
                                 <a href="https://www.linkedin.com/in/valentiostanley" >Linkedin</a>    
                                 </button>
@@ -145,9 +143,12 @@ export default function Main() {
                 {/* grid grid-cols-1 gap-6 sm:grid-cols-2 */}
                 <div className="flex max-sm:flex-col  md:justify-between md:flex-row md:max-w-6xl mx-auto ">
                     <div >
-                        <h3 className=" text-xl font-semibold">Experience</h3>  <br></br>
+                        <h3 className=" text-xl font-semibold">Experiences</h3>  <br></br>
                         <h3 className="font-semibold">PT BANK BCA DIGITAL</h3>
-                        IT Enterprise Applications Intern | February 2024 - February 2025
+                        IT Enterprise Applications Intern | February 2024 - February 2025 <br></br>
+                        <br></br>
+                        <h3 className="font-semibold">TIOTAN KITCHEN</h3>
+                        FoodPreneur & Founder | October 2025 - Present                        
                     </div>
                     <hr className="max-sm:h-px max-sm:my-8 bg-gray-300 border-0 dark:bg-gray-700"></hr>
                     <div className="md:w-px md:h-60 md:bg-gray-300 md:mx-4 item-center"></div>
@@ -272,48 +273,48 @@ export default function Main() {
                             <div className="hidden p-4 bg-white rounded-b-lg md:p-8 dark:bg-[#578FCA] gap-5 flex md:flex-row flex-wrap" id="tech" role="tabpanel" aria-labelledby="programming-tab">
                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                     <div>
-                                        <img className="h-auto max-w-full rounded-lg" src="images/techs/EmotRec-Web.png" alt="project-tech"/>
-                                        <h3 className="font-semibold text-center text-white mt-3">Emotion Recognition Web App - Flask</h3>
+                                        <a href="documents/Thesis PPT FIX - Stanley.pdf" download="Thesis PPT FIX - Stanley.pdf">
+                                            <img className="h-auto max-w-full rounded-lg" src="images/techs/EmotRec-Web.png" alt="flask"/>
+                                            <h3 className="font-semibold text-center text-white mt-3">Emotion Recognition Web App - Flask</h3>                                        
+                                        </a>
                                     </div>
                                     <div>
-                                        <img className="h-auto max-w-full rounded-lg" src="images/techs/Item-Data-Web.png" alt="layout"/>
-                                        <h3 className="font-semibold text-center text-white mt-3">Item Data Web App - Laravel</h3>
+                                        <a href="https://github.com/ValentioStanley/final-project-bncc-be.git">
+                                            <img className="h-auto max-w-full rounded-lg" src="images/techs/Item-Data-Web.png" alt="laravel"/>
+                                            <h3 className="font-semibold text-center text-white mt-3">Item Data Web App - Laravel</h3>                                        
+                                        </a>
                                     </div>
                                     <div>
-                                        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="media"/>
+                                        <img className="h-auto max-w-full rounded-lg" src="images/techs/MLEngineer-Web.jpg" alt="ml"/>
                                         <h3 className="font-semibold text-center text-white mt-3">Machine Learning Engineer</h3>
-                                    </div>
-                                    <div>
-                                        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="vector"/>
-                                        <h3 className="font-semibold text-center text-white mt-3">Data Analyst</h3>
-                                    </div>
-                                    <div>
-                                        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="vector"/>
-                                        <h3 className="font-semibold text-center text-white mt-3">Data Engineer</h3>
-                                    </div>                                    
+                                    </div>                                
                                 </div>                                                                                                                        
                             </div>
                             <div className="hidden p-4 bg-white rounded-b-lg  md:p-8 dark:bg-[#578FCA]" id="art-project" role="tabpanel" aria-labelledby="art-project-tab">
                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                                     <div>
-                                        <img className="h-auto max-w-full rounded-lg" src="images/designs/UI-App-Design.png" alt="User Interface"/>
-                                        <h3 className="font-semibold text-center text-white mt-3">UI Application Design</h3>
+                                        <a href="documents/User Interface Portfolio IN.pdf" download="User Interface Portfolio IN.pdf">
+                                        <img className="h-auto max-w-full rounded-lg" src="images/designs/User Interface Portfolio Cover.jpg" alt="User Interface"/>
+                                        <h3 className="font-semibold text-center text-white mt-3">User Interface</h3>
+                                        </a>
                                     </div>
                                     <div>
-                                        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="Layout"/>
-                                        <h3 className="font-semibold text-center text-white mt-3">Layout Design</h3>
+                                        <a href="documents/Layout Art Portfolio IN.pdf" download="Layout Art Portfolio IN.pdf">
+                                        <img className="h-auto max-w-full rounded-lg" src="images/designs/Layout Art Portfolio Cover.jpg" alt="Layout Art"/>
+                                        <h3 className="font-semibold text-center text-white mt-3">Layout Art</h3>
+                                        </a>
                                     </div>
                                     <div>
-                                        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="Vector"/>
-                                        <h3 className="font-semibold text-center text-white mt-3">Vector Design</h3>
+                                        <a href="documents/Pixel Art Portfolio IN.pdf" download="Pixel Art Portfolio IN.pdf">
+                                        <img className="h-auto max-w-full rounded-lg" src="images/designs/Pixel Art Portfolio Cover.jpg" alt="Pixel Art"/>
+                                        <h3 className="font-semibold text-center text-white mt-3">Pixel Art</h3>
+                                        </a>
                                     </div>
                                     <div>
-                                        <img className="h-auto max-w-full rounded-lg" src="images/designs/Media-Design.png" alt="Media Design"/>
-                                        <h3 className="font-semibold text-center text-white mt-3">Media Design</h3>
-                                    </div>
-                                    <div>
-                                        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="Pixel Art"/>
-                                        <h3 className="font-semibold text-center text-white mt-3">2D Pixel Design</h3>
+                                        <a href="documents/Photography Portfolio IN.pdf" download="Photography Portfolio IN.pdf">
+                                        <img className="h-auto max-w-full rounded-lg" src="images/designs/Photography Portfolio Cover.jpg" alt="Photography"/>
+                                        <h3 className="font-semibold text-center text-white mt-3">Photography</h3>
+                                        </a>
                                     </div>
 
                                 </div>
@@ -328,13 +329,6 @@ export default function Main() {
                                     <div>
                                         <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="Catering"/>
                                         <h3 className="font-semibold text-center text-white mt-3">Catering</h3>
-                                    </div>
-                                    <div>
-                                        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="Appetizer"/>
-                                        <h3 className="font-semibold text-center text-white mt-3">Main Course</h3>
-                                    </div>
-                                    <div>
-                                        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt=""/>
                                     </div>
                                 </div>           
                             </div>                                                                             
@@ -351,7 +345,7 @@ export default function Main() {
                     <div className="">
                         <div className="flex items-start gap-2.5 mx-auto">
                             <img className="w-14 h-14 rounded-full" src="pp-message.jpg" alt="Jese image"/>
-                            <div className="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-[#3674B5]">
+                            <div className="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-[#578FCA]">
                                 <div className="flex items-center space-x-2 rtl:space-x-reverse">
                                     <span className="text-sm font-semibold text-gray-900 dark:text-white">V.Stanley</span>
                                     <span className="text-sm font-normal text-gray-500 dark:text-white">{currentTime.toLocaleTimeString()}</span>
@@ -362,9 +356,15 @@ export default function Main() {
                         </div>
                         <h1 className="text-center text-3xl font-semibold mt-5">Other Message</h1>
                         <div className="flex flex-row justify-center gap-5 mt-3 mb-5">
-                            <Linkedin size={36} color="#0077B5" strokeWidth="2" />
-                            <MessageCircleMore size={36} color="#25D366" strokeWidth="2" />
-                            <AtSign size={36} color="#da0101ff" strokeWidth="2"  />
+                            <a href="https://www.linkedin.com/in/valentiostanley/" className="hover:scale-110 transition-transform duration-300">
+                                <Linkedin size={36} color="#0077B5" strokeWidth="2"/>
+                            </a>
+                            <a href="" className="hover:scale-110 transition-transform duration-300">
+                                <MessageCircleMore size={36} color="#25D366" strokeWidth="2" Link="https://wa.me/6285198642990"/>
+                            </a>
+                            <a href="" className="hover:scale-110 transition-transform duration-300">
+                                <AtSign size={36} color="#da0101ff" strokeWidth="2"  />
+                            </a>                                                          
                         </div>
 
                     </div>
@@ -373,19 +373,19 @@ export default function Main() {
                         <h3 className=" text-xl font-semibold">Message</h3>
                         <div className="mb-5">
                             <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900">Your name</label>
-                            <input type="text" id="name" className="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Flowbite" required />
+                            <input type="text" id="name" className="shadow-xs bg-gray-50 border border-gray-300 text-gray-400 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Valentio Stanley..." required />
                         </div>
 
                         <div className="mb-5">
                             <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">Your email</label>
-                            <input type="email" id="email" className="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="name@flowbite.com" required />
+                            <input type="email" id="email" className="shadow-xs bg-gray-50 border border-gray-300 text-gray-400 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="valstan@email.com" required />
                         </div>
 
                         <div className="mb-5">
                             <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900">Your message</label>
-                            <textarea id="message" rows="4" className="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Leave a comment..."></textarea>
+                            <textarea id="message" rows="4" className="shadow-xs bg-gray-50 border border-gray-300 text-gray-400 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Leave a comment..."></textarea>
                         </div>
-                        <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-[#9EC6F3] font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-[#3674B5] dark:hover:bg-[#9EC6F3] hover:text-gray-700 dark:hover:text-gray-700">Send Message</button>
+                        <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-[#9EC6F3] font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-[#578FCA] dark:hover:bg-[#9EC6F3] hover:text-gray-700 dark:hover:text-gray-700">Send Message</button>
                     </form>
                 </div>
 
