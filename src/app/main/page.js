@@ -34,11 +34,28 @@ export function useIsVisible(ref) {
 
 export default function Main() {
     
+    // icon email
+    const userEmail = 'valentio.gunadi@gmail.com';
 
-    for (let i = 0; i < 10; i++) {
-        // console.log("Hello, world!");
+    // contact form
+    const [form, setForm] = useState({ name: "", email: "", message: "" });
+    const [status, setStatus] = useState("");
 
-    }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus("Sending...");
+
+        const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+        });
+
+        const data = await res.json();
+        if (res.ok) setStatus("✅ Sent successfully!");
+        else setStatus(`❌ Error: ${data.error}`);
+    };
+
     const ref1 = useRef();
     const isVisible1 = useIsVisible(ref1);
 
@@ -362,30 +379,48 @@ export default function Main() {
                             <a href="" className="hover:scale-110 transition-transform duration-300">
                                 <MessageCircleMore size={36} color="#25D366" strokeWidth="2" Link="https://wa.me/6285198642990"/>
                             </a>
-                            <a href="" className="hover:scale-110 transition-transform duration-300">
-                                <AtSign size={36} color="#da0101ff" strokeWidth="2"  />
-                            </a>                                                          
+                            <div className="hover:scale-110 transition-transform duration-300">
+                                <Link href={`mailto:${userEmail}?subject=question&body=Hello%20Stanley,%20I%20would%20like%20to%20get%20in%20touch%20with%20you.`}>
+                                    <AtSign size={36} color="#da0101ff" strokeWidth="2"  />
+                                </Link>
+                            </div>                                                          
                         </div>
 
                     </div>
 
-                    <form className="md:min-w-sm">
+                    <form onSubmit={handleSubmit} className="md:min-w-sm">
                         <h3 className=" text-xl font-semibold">Message</h3>
                         <div className="mb-5">
                             <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900">Your name</label>
-                            <input type="text" id="name" className="shadow-xs bg-gray-50 border border-gray-300 text-gray-400 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Valentio Stanley..." required />
+                            <input 
+                            type="text" 
+                            id="name"
+                            value={form.name}
+                            onChange={(e) => setForm({ ...form, name: e.target.value })}
+                            className="shadow-xs bg-gray-50 border border-gray-300 text-gray-400 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Valentio Stanley..." required/>
                         </div>
 
                         <div className="mb-5">
                             <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">Your email</label>
-                            <input type="email" id="email" className="shadow-xs bg-gray-50 border border-gray-300 text-gray-400 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="valstan@email.com" required />
+                            <input 
+                            type="email" 
+                            id="email"
+                            value={form.email}
+                            onChange={(e) => setForm({ ...form, email: e.target.value })}            
+                            className="shadow-xs bg-gray-50 border border-gray-300 text-gray-400 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="valstan@email.com" required />
                         </div>
 
                         <div className="mb-5">
                             <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900">Your message</label>
-                            <textarea id="message" rows="4" className="shadow-xs bg-gray-50 border border-gray-300 text-gray-400 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Leave a comment..."></textarea>
+                            <textarea 
+                            id="message" 
+                            rows="4" 
+                            value={form.message}
+                            onChange={(e) => setForm({ ...form, message: e.target.value })}                            
+                            className="shadow-xs bg-gray-50 border border-gray-300 text-gray-400 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Leave a comment..." required></textarea>
                         </div>
                         <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-[#9EC6F3] font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-[#578FCA] dark:hover:bg-[#9EC6F3] hover:text-gray-700 dark:hover:text-gray-700">Send Message</button>
+                        <p className="text-sm text-gray-500">{status}</p>
                     </form>
                 </div>
 

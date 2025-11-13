@@ -1,19 +1,46 @@
+import { Resend } from "resend";
+import { NextResponse } from "next/server";
+
 export async function POST(req) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const body = await req.json();
     const { name, email, message } = body;
 
-    if (!name || !email || !message) {
-      return Response.json({ error: "All fields are required" }, { status: 400 });
-    }
+    const data = await resend.emails.send({
+      from: `hello@notifications.tiotan.dev`, // ganti dengan email verified kamu
+      to: `${email}`, // tujuan email kamu
+      subject: `New message from ${name}`,
+      html: `
+        <h2>Contact Form Message</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong> ${message}</p>
+      `,
+    });
 
-    // Example: send to console or replace with email sending / DB storage
-    console.log("New contact form submission:", { name, email, message });
-
-    // ✅ Return success response
-    return Response.json({ success: true, message: "Form submitted successfully!" });
+      return NextResponse.json({ success: true, data }, { status: 200 });
   } catch (error) {
-    console.error("Error submitting form:", error);
-    return Response.json({ error: "Internal Server Error" }, { status: 500 });
+      return NextResponse.json({ success: false, error }, { status: 500 });
   }
 }
+
+// export async function GET() {
+//     const resend = new Resend(process.env.RESEND_API_KEY);
+//     try {
+//         const data = await resend.emails.send({
+//         from: `next@zenorocha.com`, // ganti dengan email verified kamu
+//         to: `zeno@resend.com`, // tujuan email kamu
+//         subject: `New message from weee`,
+//         html: `
+//             <h2>Contact Form Message</h2>
+//         `,
+//         });
+
+//         return NextResponse.json({ success: true, data }, { status: 200 });
+//     } catch (error) {
+//         return NextResponse.json({ success: false, error }, { status: 500 });
+//     }
+// }
+
+
