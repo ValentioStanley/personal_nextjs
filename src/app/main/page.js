@@ -2,10 +2,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Linkedin , MessageCircleMore , AtSign } from 'lucide-react';
-// import Button from '@/components/Button/Button';
+import ParticlesBackground from "../components/ParticlesBackground";
 
 import { useEffect, useRef, useState } from "react";
 
+// hover
 // Reference: https://medium.com/@jacobvejlinjensen/how-to-create-a-smooth-appear-on-scroll-transition-with-tailwind-css-and-react-82f2a32ab295
 export function useIsVisible(ref) {
     const [isIntersecting, setIntersecting] = useState(false);
@@ -33,44 +34,53 @@ export function useIsVisible(ref) {
 
 
 export default function Main() {
-    
     // icon email
     const userEmail = 'valentio.gunadi@gmail.com';
 
     // contact form
     const [form, setForm] = useState({ name: "", email: "", message: "" });
     const [status, setStatus] = useState("");
+    const [loading, setLoading] = useState(false); 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (loading) return; // Prevent multiple submissions
+
+        setLoading(true);
+        setError(null);
+        setSuccess(false);
         setStatus("Sending...");
 
-        const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-        });
-
-        const data = await res.json();
-        if (res.ok) setStatus("✅ Sent successfully!");
-        else setStatus(`❌ Error: ${data.error}`);
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(form),
+            });
+            const data = await response.json();
+            if (response.ok) {
+                setStatus("✅ Sent successfully!");
+                setSuccess(true);
+                setName('');
+                setEmail('');
+                setMessage('');
+            } else {
+                setStatus(`❌ Error: ${data.error}`);
+                setError(data.message || 'An unknown error occurred.');
+            }
+        } catch (error) {
+            console.error('Fetch error:', err);
+            setError('Failed to send message. Please try again later.')
+        } finally {
+            setLoading(false);
+        }
     };
 
+    
     const ref1 = useRef();
     const isVisible1 = useIsVisible(ref1);
-
-    const ref2 = useRef();
-    const isVisible2 = useIsVisible(ref2);
-
-    const ref3 = useRef();
-    const isVisible3 = useIsVisible(ref3);
-
-    const ref4 = useRef();
-    const isVisible4 = useIsVisible(ref4);
     
-    const ref5 = useRef();
-    const isVisible5 = useIsVisible(ref5);
-    
+    // current time
     const [currentTime, setCurrentTime] = useState(new Date());
 
     useEffect(() => {
@@ -79,8 +89,8 @@ export default function Main() {
     }, 1000); // Update every second
 
     return () => clearInterval(intervalId); // Cleanup on unmount
-    }, []);  
-
+    }, []);
+  
   return (
     <html lang="en">
       <head>
@@ -89,7 +99,6 @@ export default function Main() {
         {/* <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet"/> */}
       </head>
       <body className="__variable_188709 __variable_9a8899 antialiased">
-    
 
         {/* Navigation bar */}
         <nav className="max-sm:hidden bg-white border-gray-200 dark:bg-[#3674B5]">
@@ -113,23 +122,23 @@ export default function Main() {
             </div>
         </nav>
 
-
         {/* Main content */}
         {/* Banner */}
-        <section className={`bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply  `}>
+        <section className={`overflow-hidden`}>
+            <ParticlesBackground/>
             <div className="px-4 h-190 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
-                <h1 className={`mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl dark:text-white transition-all duration-800 ease-in ${isVisible5 ? "opacity-100" : "opacity-0 -translate-y-10"}`}>Hi, Bestie!</h1>
+                <h1 ref={ref1} className={`mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl dark:text-white transition-all duration-800 ease-in ${isVisible1 ? "opacity-100" : "opacity-0 -translate-y-10"}`}>Hi, Bestie!</h1>
                 
-                <p ref={ref5} className={`mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48 dark:text-white $ transition-all duration-800 ease-in ${isVisible5 ? "opacity-100" : "opacity-0 translate-y-10"}`}>
+                <p ref={ref1} className={`mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48 dark:text-white $ transition-all duration-800 ease-in ${isVisible1 ? "opacity-100" : "opacity-0 translate-y-10"}`}>
                     You really want to know about me? Sure???</p>
-                <div className={`flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 transition-all duration-800 ease-in ${isVisible5 ? "opacity-100" : "opacity-0 translate-y-10"}`}>
+                <div className={`flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 transition-all duration-800 ease-in ${isVisible1 ? "opacity-100" : "opacity-0 translate-y-10"}`}>
                     <a href="#aboutme" className="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
                         Why Not??? :)
                     </a>  
                 </div>
             </div>
-        </section>     
-        
+        </section> 
+
         <article className="text-black bg-white py-10">
 
             {/* About Me */}
@@ -419,7 +428,10 @@ export default function Main() {
                             onChange={(e) => setForm({ ...form, message: e.target.value })}                            
                             className="shadow-xs bg-gray-50 border border-gray-300 text-gray-400 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Leave a comment..." required></textarea>
                         </div>
-                        <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-[#9EC6F3] font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-[#578FCA] dark:hover:bg-[#9EC6F3] hover:text-gray-700 dark:hover:text-gray-700">Send Message</button>
+                        <button type="submit" disabled={loading} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:outline-none focus:ring-[#9EC6F3] font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-[#578FCA] dark:hover:bg-[#9EC6F3] hover:text-gray-700 dark:hover:text-gray-700">
+                            
+                            {loading ? 'Sending...' : 'Send Message'}
+                            </button>
                         <p className="text-sm text-gray-500">{status}</p>
                     </form>
                 </div>
@@ -427,8 +439,11 @@ export default function Main() {
             </section>
 
         </article>
+        
 
         <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-links@3/tsparticles.preset.links.min.js"></script>
 
         {/* Footer */}
         <footer className="dark:bg-[#3674B5] text-[#9EC6F3] py-8 ">
